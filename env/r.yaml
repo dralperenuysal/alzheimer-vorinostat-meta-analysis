@@ -1,0 +1,34 @@
+name: alz-vorinostat-r
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.3.3
+  # data handling
+  - r-dplyr
+  - r-tidyr
+  - r-tibble
+  - r-readr
+  - r-stringr
+  - r-tidyverse
+  - r-glue
+  # plotting (04_figures)
+  - r-ggplot2
+  - r-ggrepel
+  - r-ggbreak
+  # expression handling
+  - bioconductor-biobase
+  - bioconductor-biomart
+  - bioconductor-biostrings
+  # differential expression and meta-analysis
+  - bioconductor-limma
+  - bioconductor-deseq2
+  - bioconductor-edger
+  - bioconductor-dexma
+  - bioconductor-impute
+
+# Not available from conda; install separately:
+#   annotables   remotes::install_github("stephenturner/annotables")
+#
+# 05_primer_design/ is not part of the pipeline and its dependencies are not
+# here; see 05_primer_design/README.md.

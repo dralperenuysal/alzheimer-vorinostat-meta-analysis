@@ -1,0 +1,36 @@
+# Input matrices and intermediate data. None of it is original to this study,
+# and some of it runs to hundreds of megabytes.
+data/
+
+# Local working notes and scratch scripts.
+archive/
+
+# STRING's own network drawings. They are regenerated on demand with
+# `string_network.py --image` and run to tens of megabytes each, because
+# STRING embeds every protein bubble as a base64 image.
+results/ppi/*.svg
+
+# Dropped by R when a script draws to the default device.
+Rplots.pdf
+
+# Smoke-test output from the generic pipeline. The toy input data is
+# committed; what the pipeline makes of it is not.
+06_generic_pipeline/example/output/
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store

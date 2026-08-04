@@ -1,0 +1,16 @@
+name: alz-vorinostat-py
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - pandas
+  - numpy
+  - matplotlib          # 04_figures
+  # 05_primer_design is not a pipeline stage; these two are here only so it can
+  # be run by hand. Nothing in run_all.sh needs them.
+  - biopython           # 05_primer_design, Entrez retrieval
+  - primer3-py          # 05_primer_design
+  - pip
+  - pip:
+      - chembl_webresource_client   # 03_druggability
