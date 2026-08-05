@@ -207,10 +207,12 @@ Two comparisons are deliberately not byte-exact:
 - **Figures.** matplotlib writes a fresh `/CreationDate` into every PDF, so
   two runs of the same script never produce identical bytes. The check
   compares the extracted text and the file size instead.
-- **Hub genes.** Degree is an integer over a few hundred proteins, so ties are
-  common and the top-10 cut usually falls inside one. Two runs can return
-  different genes while ranking the network identically. The check reports the
-  degree of every swapped gene and passes when the swap is purely a tie.
+- **Hub genes.** Degree is an integer over a few hundred proteins, so a top-N
+  cut can fall inside a tied group and two runs return different genes while
+  ranking the network identically. The current cut, 14, was chosen so this
+  does not happen — see below — but the check still verifies it rather than
+  assuming it, and reports the degree of every swapped gene if a future rerun
+  ever does land on a tie.
 
 `DIFFERS` is not automatically a failure. Package versions move, GEO
 occasionally revises a series, and STRING publishes new releases; the notes
